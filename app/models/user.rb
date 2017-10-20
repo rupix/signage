@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   scope :search, -> (search) { where("users.email ILIKE ?", "%#{search}%") if search.present? }
 
-  attr_accessor :encrypted_password # Just to make :database_authenticatable work
+
 
   def full_name
     "#{first_name} #{last_name}".strip
