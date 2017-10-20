@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Signage
   class Application < Rails::Application
-    config.asset_url = 'http://www2.chapman.edu'
+    #config.asset_url = 'http://www2.chapman.edu'
     config.autoload_paths << Rails.root.join('lib')
 
     # Settings in config/environments/* take precedence over those specified here.
