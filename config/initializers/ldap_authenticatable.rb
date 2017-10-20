@@ -34,7 +34,7 @@ module Devise
         end
 
         def notify_bugsnag(options)
-          Bugsnag.notify(RuntimeError.new("Chapman Identity Server Failed"), options)
+          #Bugsnag.notify(RuntimeError.new("Chapman Identity Server Failed"), options)
         end
     end
   end

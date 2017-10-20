@@ -41,7 +41,6 @@ gem 'selectize-rails', '0.12.1'
 gem 'cancancan', '1.12.0'
 gem 'net-ldap', '0.11'
 gem 'devise'
-gem 'bugsnag', '2.8.12'
 gem 'whenever', '0.9.4', :require => false
 gem 'jquery-ui-rails', '5.0.5'
 gem 'kaminari', '0.16.3'
