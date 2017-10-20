@@ -26,12 +26,18 @@ module Signage
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    # Link Action Mailer to the Chapman SMTP server
-    config.action_mailer.delivery_method = :smtp
+
     config.action_mailer.perform_deliveries = true
-    config.action_mailer.smtp_settings = {
-      address:              'smtp.chapman.edu',
-      port:                 25
+    config.action_mailer.delivery_method = :smtp
+     config.action_mailer.smtp_settings = {
+      address:              'mail.gmedicalcenter.com.br',
+      port:                 '25',
+      domain:               'gmedicalcenter.com.br',
+      user_name:            'contato@gmedicalcenter.com.br',
+      password:             'sucesso2016',
+      authentication:       'plain',
+      enable_starttls_auto: true,
+      openssl_verify_mode:   'none'
     }
     config.action_mailer.raise_delivery_errors = true
 
