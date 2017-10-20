@@ -2,10 +2,10 @@ class User < ActiveRecord::Base
   include ActiveDirectoryLookups
 
   has_many :sign_users
-  has_many :signs, through: :sign_users, dependent: :destroy, prevent_dups: true
+  has_many :signs, through: :sign_users, dependent: :destroy
 
   has_many :slide_users
-  has_many :slides, through: :slide_users, dependent: :destroy, prevent_dups: true
+  has_many :slides, through: :slide_users, dependent: :destroy
 
   devise :database_authenticatable, :rememberable, :trackable
 

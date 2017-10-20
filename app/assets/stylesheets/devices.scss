@@ -89,6 +89,12 @@ subhead {
   background-color: rgba(0,0,0,0.85);
 }
 
+.ui-head.gms {
+  height: 70px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.64);
+}
+
 .ui-head.wacubo {
  background-color: $wacubo-blue; 
  padding-left: 260px;
@@ -121,6 +127,14 @@ subhead {
   background: image-url('logo-dodge.svg') 0 0 / 100% 100%;
   width: 556px;
   height: 55px;
+}
+
+
+.ui-logo-gms {
+  background: image-url('logo-gms.svg') 0 0 / 100% 100%;
+  width: 120px;
+  height: 55px;
+  margin: 14px 14px 14px 0;
 }
 
 .ui-logo-wacubo {
@@ -159,6 +173,7 @@ subhead {
 .ui-location-time {
   font-size: 20px;
   font-family: "Futura Light", sans-serif;
+  text-align: right;
 }
 
 .ui-location-name + .ui-location-time {
@@ -784,4 +799,28 @@ subhead {
 
 ::-webkit-scrollbar {
   width: 0 !important
+}
+
+
+
+
+.notice {
+  height: 100%;
+  width: 100%;
+
+  h1 {
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 0 1px 0 #000;
+    position: absolute;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.59);
+  }
+
+  .img_notice {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+  }
 }

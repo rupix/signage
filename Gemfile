@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '>= 5.0.1'
 # Use postgresql as the database for Active Record
-gem 'pg', '0.18.2'
+gem 'pg', '~> 0.18'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -31,7 +31,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Other gems...
 # TODO: add comment for each gem (or group of related gems) explaining why it was included.
 gem "airbrussh", :require => false
-gem 'has_many_prevent_dups', '0.0.3'
 gem 'public_activity', '1.4.2'
 gem 'rails4-autocomplete', '1.1.1'
 gem 'mini_magick'
@@ -41,7 +40,7 @@ gem 'materialize-sass', '0.98.2'
 gem 'selectize-rails', '0.12.1'
 gem 'cancancan', '1.12.0'
 gem 'net-ldap', '0.11'
-gem 'devise', '3.5.2'
+gem 'devise'
 gem 'bugsnag', '2.8.12'
 gem 'whenever', '0.9.4', :require => false
 gem 'jquery-ui-rails', '5.0.5'
@@ -57,6 +56,10 @@ gem 'refills'
 gem 'rest-client', '1.8.0'
 gem 'awesome_print'
 
+
+#XML READ
+gem "feedjira"
+gem 'httparty'
 # Allow user to easily switch users in dev
 gem "switch_user", group: :development
 
@@ -96,4 +99,11 @@ group :test do
   gem 'simplecov', require: false
   gem 'poltergeist'
 end
+
+
+
+# Para Windows
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'wdm', '>= 0.1.0', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 

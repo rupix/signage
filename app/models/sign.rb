@@ -1,9 +1,9 @@
 class Sign < ActiveRecord::Base
   has_many :sign_users
-  has_many :users, through: :sign_users, dependent: :destroy, prevent_dups: true
+  has_many :users, through: :sign_users, dependent: :destroy
 
   has_many :sign_slides
-  has_many :slides, through: :sign_slides, dependent: :destroy, prevent_dups: true
+  has_many :slides, through: :sign_slides, dependent: :destroy
 
   # These states are shown as 'Public' and 'Private' to the user, however due to column name restrictions from Postgres, I can't use `public` or `private` in the
   # database, and resorted to `listed` and `hidden`. So `public` => `listed` as `private` => `hidden`

@@ -5,6 +5,8 @@
  *  slides [OWL CAROUSEL]
  *  menu   [OWL CAROUSEL]
  */
+
+
 var Device = {
   slides: undefined,
   menu:   undefined,
@@ -121,7 +123,7 @@ Device._startClock = function() {
 };
 
 Device._updateTime = function() {
-  $('.ui-location-time').text(moment().format("dddd, MMMM D, YYYY, h:mm:ss a"));
+  $('.ui-location-time').text(moment().locale('pt-br').format("dddd, D MMMM , YYYY, h:mm:ss a"));
 };
 
 Device._queueNextSlide = function() {

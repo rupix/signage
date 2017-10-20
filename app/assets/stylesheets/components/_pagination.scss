@@ -48,13 +48,10 @@
         display: inline;
       }
 
-      @include media($large-screen) {
-        display: inline;
-      }
     }
 
     li a {
-      @include transition (all 0.2s ease-in-out);
+      //@include transition (all 0.2s ease-in-out);
       background: $pagination-background;
       border-radius: $base-border-radius;
       border: $pagination-border;

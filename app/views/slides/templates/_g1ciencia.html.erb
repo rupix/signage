@@ -1,0 +1,13 @@
+<%
+
+	xml = HTTParty.get(slide.feed_url).body
+	feed = Feedjira::Feed.parse xml
+
+	entity = feed.entries.shuffle.first
+%>
+
+<div class="notice notice_saude">
+	<div class="img_notice" style="background-image: url('<%= entity.image if entity.image %>')">
+		<h1><%= entity.title %></h1>
+	</div>
+</div>

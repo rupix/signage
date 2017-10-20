@@ -10,10 +10,10 @@ class Slide < ActiveRecord::Base
   attr_accessor :skip_file_validation
 
   has_many :sign_slides
-  has_many :signs, through: :sign_slides, dependent: :destroy, prevent_dups: true
+  has_many :signs, through: :sign_slides, dependent: :destroy
 
   has_many :slide_users
-  has_many :users, through: :slide_users, dependent: :destroy, prevent_dups: true
+  has_many :users, through: :slide_users, dependent: :destroy
 
   # Adding order here just to clarify the default ordering. At present, users cannot reorder
   # scheduled items for a slide. If they need to, they'll need to create a new slide.
