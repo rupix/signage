@@ -3,11 +3,35 @@
 	xml = HTTParty.get(slide.feed_url).body
 	feed = Feedjira::Feed.parse xml
 
-	entity = feed.entries.shuffle.first
+	entities = feed.entries
 %>
 
-<div class="notice notice_saude">
-	<div class="img_notice" style="background-image: url('<%= entity.image if entity.image %>')">
-		<h1><%= entity.title %></h1>
-	</div>
-</div>
+<section id="news-demo">
+
+	<% entities.each do |entity| %>
+		
+		<% if entity.published.to_datetime.day == Date.today.day  && entity.image %>
+
+
+				<div class="notice notice_saude">
+					<div class="img_notice" style="background-image: url('<%= entity.image %>')">
+						<h1><%= entity.title %></h1>
+						
+					</div>
+				</div>
+			
+		<% end %>
+
+	<% end %>
+
+</section>
+
+<script type="text/javascript">
+	jQuery('#news-demo').slippry({
+		elements: '.notice',
+		pager: false,
+		controls: false,
+		pause: 9000,
+		autoHover: false
+});
+</script>

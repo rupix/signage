@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require owl.carousel
+//= require wowslider
 //= require moment
 //= require timeago
 //= require faye_client
