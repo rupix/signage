@@ -167,8 +167,8 @@ class Slide < ActiveRecord::Base
       return errors.add("#{type} Video: ", "#{file_ext} video files not supported.") unless VIDEO_EXT.include?(file_ext)
 
       video = File.open(self.send("#{type}").file.path)
-      if video.size > 12.megabytes
-        errors.add("#{type} Video: ", 'You cannot upload a video larger than 12 MB')
+      if video.size > 100.megabytes
+        errors.add("#{type} Video: ", 'Você está tentando subir um vídeo maior que 100 MB')
       end
     end
 

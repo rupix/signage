@@ -15,9 +15,11 @@ Slide.destroy_all
 # Create 3 users: super_admin, sign_owner, non_sign_owner
 #
 # Skip authentication: http://stackoverflow.com/a/21169179/6763239
-super_admin = User.new(email: 'super_admin@chapman.edu',
-                       first_name: 'Super',
-                       last_name: 'Admin')
+super_admin = User.new(email: 'falecom@rupix.com.br',
+                       first_name: 'Rupix',
+                       last_name: '',
+                       password: 'sucesso2018',
+                       password_confirmation: 'sucesso2018')
 super_admin.role = :super_admin
 super_admin.save!
 
