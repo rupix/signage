@@ -55,6 +55,8 @@ gem 'refills'
 gem 'rest-client', '1.8.0'
 gem 'awesome_print'
 
+ gem "opengraph_parser"
+
 
 #XML READ
 gem "feedjira"

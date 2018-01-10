@@ -28,12 +28,12 @@
 
       <div class="input-field">
         <%= f.text_field :menu_name %>
-        <%= f.label :menu_name, "Slide name" %>
+        <%= f.label :menu_name, "Nome do Slide" %>
       </div>
 
       <div class="input-field template">
         <%= f.select :template, Slide.templates.map{|t| [t.titleize, t] }, { include_blank: 'Select your template'}, id: "slide_template" %>
-        <%= f.label :template, "Select slide template" %>
+        <%= f.label :template, "Selecione o template" %>
       </div>
 
       <div class="input-field orientation" data-show-when="#slide_template==social_feed">
@@ -44,7 +44,7 @@
 
     <!-- Second Fieldset -->
 
-    <div data-show-when="#slide_template==(standard|directory|schedule|social_feed|g1ciencia)">
+    <div>
       <div class="slide-fields">
         <div class="live-preview-triggers">
           <div class="input-field" data-show-when="#slide_template==(standard|directory|schedule|social_feed)">
@@ -52,7 +52,7 @@
             <%= f.label :heading %>
           </div>
 
-          <div class="input-field" data-show-when="#slide_template==(social_feed|g1ciencia)">
+          <div class="input-field">
             <%= f.text_field :feed_url %>
             <%= f.label :feed_url %>
           </div>
@@ -103,7 +103,7 @@
             </p>
           </div>
 
-          <div class="field" data-show-when="#slide_template==(standard|directory|schedule|social_feed)">
+          <div class="field" >
             <%= f.label :sponsor, "Organizer/Sponsor" %>
             <%= f.select :sponsor_id, options_for_select(Sponsor.all.map{|s|[s.name, s.id]}, @slide.sponsor_id), { include_blank: 'None' } %>
           </div>
@@ -217,7 +217,7 @@
 
         <div class="input-field">
           <%= f.number_field :duration %>
-          <%= f.label :duration, "Number of seconds to display slide" %>
+          <%= f.label :duration, "Nº de segundos para exibir o slide" %>
         </div>
 
         <div class="input-field">
@@ -232,10 +232,10 @@
 
         <div class="input-field">
           <%= f.select :sign_ids, @signs.map{|sign| [sign_name_with_approval_details(sign), html_escape_once(sign.id)] }, {prompt: 'Choose signs'}, multiple: '' %>
-          <%= f.label :sign_ids, "Signs this slide should play on" %>
+          <%= f.label :sign_ids, "Players para exibir o slide" %>
         </div>
 
-        <div class="actions" data-show-when="#slide_template==(standard|directory|schedule|social_feed|g1ciencia)">
+        <div class="actions">
           <%= f.button class: 'btn green', data: { feedback: 'Saving...' } %>
           <%= link_to "Delete", @slide, class: 'delete-slide', method: :delete, data: { confirm: 'Are you sure you want to delete this slide?'} %>
         </div>

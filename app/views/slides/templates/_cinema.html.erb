@@ -1,0 +1,25 @@
+<%
+	xml = HTTParty.get(slide.feed_url).body
+	feed = Feedjira::Feed.parse xml
+
+	entity = feed.entries.shuffle.first
+
+	og = OpenGraph.new(entity.url)
+%>
+
+
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+
+<div class="cinema">
+		<div class="header">
+			<%= image_tag feed.image.url, class: 'logo' %>
+			<h2 class="tag"><%= feed.title %></h2>
+		</div>
+		
+		<div class="image" style="background-image: url('<%= og.images.first %>')"></div>
+		<div class="title">
+			<p><%= entity.title %></p>
+		</div>
+
+</div>

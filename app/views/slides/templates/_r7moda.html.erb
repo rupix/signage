@@ -1,0 +1,19 @@
+<%
+
+
+
+	xml = HTTParty.get(slide.feed_url).body
+	feed = Feedjira::Feed.parse xml
+
+	entity = feed.entries.shuffle.first
+
+	og = OpenGraph.new(entity.url)
+%>
+
+<div class="notice moda">
+		<h2 class="tag"><%= feed.title %></h2>
+		
+
+		<%= image_tag og.images.first, class: 'photo' %>
+		<div class="title"><%= entity.title %></div>
+</div>
