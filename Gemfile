@@ -43,7 +43,7 @@ gem 'net-ldap', '0.11'
 gem 'devise'
 gem 'whenever', '0.9.4', :require => false
 gem 'jquery-ui-rails', '5.0.5'
-gem 'kaminari', '0.16.3'
+gem 'kaminari', github: 'amatsuda/kaminari', branch: 'master'
 gem 'remotipart', '~> 1.2'
 gem 'carrierwave', '0.10.0'
 gem 'friendly_id', '~> 5.1.0'
